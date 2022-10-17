@@ -16,18 +16,17 @@ class _HomeState extends State<Home> {
   int _people = 0;
   String _infoText = "Pode Entrar!";
 
-  void _changePeople(int delta){
+  void _handlerPeople(int delta){
     setState(() {
       _people += delta;
 
-      if(_people < 0){
+      if(_people < 0)
         _infoText = "Mundo Invertido!";
-      }else if(_people <= 10){
+      else if(_people <= 10)
         _infoText = "Pode Entrar!";
-      }else{
+      else
         _infoText = "Lotado!";
-      }
-
+      
     });
   }
 
@@ -64,7 +63,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     onPressed: () {
-                      _changePeople(1);
+                      _handlerPeople(1);
                     },
                   ),
                 ),
@@ -79,7 +78,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     onPressed: () {
-                      _changePeople(-1);
+                      _handlerPeople(-1);
                     },
                   ),
                 ),
